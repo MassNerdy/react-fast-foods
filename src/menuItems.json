@@ -1,0 +1,65 @@
+[
+  { 
+    "name": "The Burger",
+    "type": "entree",
+    "allergens": ["wheat", "meat", "dairy", "nightshades"],
+    "ingredients": ["homemade bun", "lettuce", "tomato", "cheese", "mayonnaise", "onion"]
+  },
+  { 
+    "name": "The GF/Vegan Burger",
+    "type": "entree",
+    "allergens": ["none"],
+    "ingredients": ["seasonal veggies", "house made hypo-allergenic vegan patties"]
+  },
+  { "name": "The Hot Dog",
+    "type": "entree",
+    "allergens": ["wheat", "meat"],
+    "ingredients": ["jalepeno", "ketchup", "mustard", "onion"]
+  },
+  { "name": "The Quesadilla",
+    "type": "entree",
+    "allergens": ["wheat", "dairy"],
+    "ingredients": ["tortilla", "butter", "cheese", "guacamole"]
+  },
+  { "name": "Some Fries",
+    "type": "side",
+    "allergens": ["wheat"],
+    "ingredients": ["fried potatoes", "truffle oil", "himilayan sea salt", "salt"]
+  },
+  {
+    "name": "Some Tots",
+    "type": "side",
+    "allergens": ["wheat"],
+    "ingredients": ["fried potatoes", "truffle oil", "himilayan sea salt", "salt"]
+  },
+  {
+    "name": "a Side Salad",
+    "type": "side",
+    "allergens": [],
+    "ingredients": ["lettuce", "cucumbers", "onions", "vinagrette"]
+  },
+  {
+    "name": "Some Coffee",
+    "type": "drink",
+    "allergens": [],
+    "ingredients": ["coffee beans", "water"]
+  },
+  {
+    "name": "Some Sparkling Water",
+    "type": "drink",
+    "allergens": [],
+    "ingredients": ["carbonated water", "natural flavoring"]
+  },
+  {
+    "name": "a Cookie",
+    "type": "desert",
+    "allergens": ["wheat", "cacao"],
+    "ingredients": ["chocolate chips", "wheat", "eggs", "sugar", "margerine"]
+  },
+  {
+    "name": "a Soft Serve Cone",
+    "type": "desert",
+    "allergens": ["wheat", "dairy"],
+    "ingredients": ["frozen yogurt", "sugar cone"]
+  }
+]
