@@ -5,9 +5,9 @@ class MenuItem extends Component {
   render() {
     return (
       <div id="menu_item">
-        <span className="item_name">Item Name</span>
-        <div className="allergens">Allergens</div>
-        <button className="add_special_instructions">Add Note</button>
+        <p> className="item_name">{data.name}</p>
+        <p className="allergens">{data.allergens}</p>
+        <p className="add_special_instructions">{data.special_instructions}</p>
       </div>
     )
   }

@@ -24,16 +24,16 @@ class Order extends Component {
   }
   
   remove() {
-    if (window.confirm('Are you sure you wish to delete this item?')) {
+    if (window.confirm('Are you sure you wish to delete this Order?')) {
       this.props.onRemove(this.props.index)
     } else {
       return
     }
   }
   
-  addInstructions() {
+  // addInstructions() {
     
-  }
+  // }
 
 	save(e) {
 		e.preventDefault()
@@ -45,16 +45,17 @@ class Order extends Component {
 
 	renderForm() {
 		return (
-			<div className="note" style={this.style}>
+      <div className="order" style={this.style}>
+        <textarea ref={input => this._newText = input}
+                  defaultValue={this.props.children}/>
 				<form onSubmit={this.save}>
-          <button className="add_instructions" onClick={this.addInstructions} />
-          <div className="special_instructions">
+          {/* <button className="add_instructions" onClick={this.addInstructions} /> */}
+          {/* <div className="special_instructions">
             <label>
               Special Instructions:
-              <textarea ref={input => this._newText = input}
-                        defaultValue={this.props.children}/>
+              
             </label>
-          </div>
+          </div> */}
 					<button id="save"><FaFloppyO /></button>
 				</form>
 			</div>
