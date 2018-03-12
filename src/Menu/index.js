@@ -13,17 +13,10 @@ class Menu extends Component {
 
   eachMenuItem (data, i) {
     return (
-      <button onClick={this.addMenuItemToOrder}>
+      <button>
         <MenuItem />
       </button>
     )
-  }
-
-  addMenuItemToOrder(e) {
-    e.preventDefault()
-    this.setState({
-      
-    })
   }
 
   save(e) {
