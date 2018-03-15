@@ -1,41 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
+import data from '../menuItems.json'
 import MenuItem from '../MenuItem'
 
-class Menu extends Component { 
-  constructor(props) {
-    super(props)
-    this.state = {
-      editing: false,
-      current_order: [],
-    }
-    this.eachMenuItem = this.eachMenuItem.bind(this)
-  }
+const renderMenuItems = data.map((item) => 
+    <MenuItem
+      type = {item.type}
+      itemName = {item.itemName}
+      system_name = {item.system_name}
+      price = {item.price}
+      allergens = {item.allergens} />
+  );
 
-  eachMenuItem (data, i) {
-    return (
-      <button>
-        <MenuItem />
-      </button>
-    )
-  }
-
-  save(e) {
-		e.preventDefault()
-		this.props.onChange(this.order.value, this.props.index)
-		this.setState({
-			editing: false
-		})
-	}
-
-  render() {
-    return(
-      <form id="order-form" onSubmit={this.saveOrder}>
-        <div id="menu">
-          {this.state.data.map(this.eachMenuItem)}
-        </div>
-      </form>
-    )
-  }
+function Menu(props) { 
+  return (
+    <div className="main-menu">
+      <p>Select items to add to a new order</p>
+      <ul className="item-list">
+        { renderMenuItems }
+      </ul>
+    </div> 
+  )
 }
 
 export default Menu

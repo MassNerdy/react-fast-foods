@@ -1,17 +1,63 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+/* Overall Styles */
+
+div#drive-thru-terminal {
+  display: block;
+  padding: 25px;
+  width: 75%;
+  margin: 0 auto;
 }
 
-.order {
-  border: 1px dotted gray;
-  border-radius: 5px;
-  display: inline-block;
-  width: 20vw;
-  height: auto;
+h3 {
+  background: greenyellow;
+  padding: 10px;
 }
 
-.special_instructions {
+/* Menu Styles */
+
+.menu_item {
+  margin-top: 10px;
+  min-width: 400px;
+  padding-bottom: 10px;
+  border-bottom: 1px lightgray solid;
+}
+
+.item_heading_container {
+  font-size: 18px;
+  display: flex;
+  flex: 2 auto 1 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item_name {
+  margin-right: 10px;
+}
+
+.price {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+button {
+  display:block;
+  margin-bottom: 0;
+  line-height: 0;
+  height: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.add_button {
+  margin-bottom: 5px;
+}
+
+.dotted_spacer {
+  border-bottom: 1px dashed grey;
+  height: 10px;
+  flex-grow: 4;
+  margin-left: 10px;
+}
+
+.menu_item_buttons .quantity {
   display: none;
 }

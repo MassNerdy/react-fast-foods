@@ -1,64 +1,86 @@
 [
   { 
-    "name": "The Burger",
+    "itemName": "The Burger",
+    "system_name": "the_burger",
     "type": "entree",
+    "price": 9,
     "allergens": ["wheat", "meat", "dairy", "nightshades"],
     "ingredients": ["homemade bun", "lettuce", "tomato", "cheese", "mayonnaise", "onion"]
   },
   { 
-    "name": "The GF/Vegan Burger",
+    "itemName": "The GF/Vegan Burger",
+    "system_name": "vegan_burger",
     "type": "entree",
+    "price": 8,
     "allergens": ["none"],
     "ingredients": ["seasonal veggies", "house made hypo-allergenic vegan patties"]
   },
-  { "name": "The Hot Dog",
+  { "itemName": "The Hot Dog",
+    "system_name": "hot_dog",
     "type": "entree",
+    "price": 5,
     "allergens": ["wheat", "meat"],
     "ingredients": ["jalepeno", "ketchup", "mustard", "onion"]
   },
-  { "name": "The Quesadilla",
+  { "itemName": "The Quesadilla",
+    "system_name": "quesadilla",
     "type": "entree",
+    "price": 8,
     "allergens": ["wheat", "dairy"],
     "ingredients": ["tortilla", "butter", "cheese", "guacamole"]
   },
-  { "name": "Some Fries",
+  { "itemName": "Some Fries",
+    "system_name": "fries",
     "type": "side",
+    "price": 4,
     "allergens": ["wheat"],
     "ingredients": ["fried potatoes", "truffle oil", "himilayan sea salt", "salt"]
   },
   {
-    "name": "Some Tots",
+    "itemName": "Some Tots",
+    "system_name": "tots",
     "type": "side",
+    "price": 4,
     "allergens": ["wheat"],
     "ingredients": ["fried potatoes", "truffle oil", "himilayan sea salt", "salt"]
   },
   {
-    "name": "a Side Salad",
+    "itemName": "A Side Salad",
+    "system_name": "side_salad",
     "type": "side",
+    "price": 4,
     "allergens": [],
     "ingredients": ["lettuce", "cucumbers", "onions", "vinagrette"]
   },
   {
-    "name": "Some Coffee",
+    "itemName": "Some Coffee",
+    "system_name": "coffee",
     "type": "drink",
+    "price": 2,
     "allergens": [],
     "ingredients": ["coffee beans", "water"]
   },
   {
-    "name": "Some Sparkling Water",
+    "itemName": "Some Sparkling Water",
+    "system_name": "sparkling_water",
     "type": "drink",
+    "price": 1,
     "allergens": [],
     "ingredients": ["carbonated water", "natural flavoring"]
   },
   {
-    "name": "a Cookie",
+    "itemName": "A Cookie",
+    "system_name": "cookie",
     "type": "desert",
+    "price": 2,
     "allergens": ["wheat", "cacao"],
     "ingredients": ["chocolate chips", "wheat", "eggs", "sugar", "margerine"]
   },
   {
-    "name": "a Soft Serve Cone",
+    "itemName": "A Soft Serve Cone",
+    "system_name": "soft_serve",
     "type": "desert",
+    "price": 2,
     "allergens": ["wheat", "dairy"],
     "ingredients": ["frozen yogurt", "sugar cone"]
   }
