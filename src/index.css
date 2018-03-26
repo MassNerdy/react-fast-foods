@@ -15,9 +15,9 @@ h3 {
 /* Menu Styles */
 
 .menu_item {
-  margin-top: 10px;
+  margin-top: 15px;
   min-width: 400px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   border-bottom: 1px lightgray solid;
 }
 
@@ -60,4 +60,9 @@ button {
 
 .menu_item_buttons .quantity {
   display: none;
+}
+
+.order {
+  margin: 20px 0;
+  background: red;
 }

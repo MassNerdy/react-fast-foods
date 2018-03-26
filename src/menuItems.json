@@ -1,6 +1,6 @@
 [
   { 
-    "itemName": "The Burger",
+    "item_name": "The Burger",
     "system_name": "the_burger",
     "type": "entree",
     "price": 9,
@@ -8,28 +8,28 @@
     "ingredients": ["homemade bun", "lettuce", "tomato", "cheese", "mayonnaise", "onion"]
   },
   { 
-    "itemName": "The GF/Vegan Burger",
+    "item_name": "The GF/Vegan Burger",
     "system_name": "vegan_burger",
     "type": "entree",
     "price": 8,
     "allergens": ["none"],
     "ingredients": ["seasonal veggies", "house made hypo-allergenic vegan patties"]
   },
-  { "itemName": "The Hot Dog",
+  { "item_name": "The Hot Dog",
     "system_name": "hot_dog",
     "type": "entree",
     "price": 5,
     "allergens": ["wheat", "meat"],
     "ingredients": ["jalepeno", "ketchup", "mustard", "onion"]
   },
-  { "itemName": "The Quesadilla",
+  { "item_name": "The Quesadilla",
     "system_name": "quesadilla",
     "type": "entree",
     "price": 8,
     "allergens": ["wheat", "dairy"],
     "ingredients": ["tortilla", "butter", "cheese", "guacamole"]
   },
-  { "itemName": "Some Fries",
+  { "item_name": "Some Fries",
     "system_name": "fries",
     "type": "side",
     "price": 4,
@@ -37,7 +37,7 @@
     "ingredients": ["fried potatoes", "truffle oil", "himilayan sea salt", "salt"]
   },
   {
-    "itemName": "Some Tots",
+    "item_name": "Some Tots",
     "system_name": "tots",
     "type": "side",
     "price": 4,
@@ -45,7 +45,7 @@
     "ingredients": ["fried potatoes", "truffle oil", "himilayan sea salt", "salt"]
   },
   {
-    "itemName": "A Side Salad",
+    "item_name": "A Side Salad",
     "system_name": "side_salad",
     "type": "side",
     "price": 4,
@@ -53,7 +53,7 @@
     "ingredients": ["lettuce", "cucumbers", "onions", "vinagrette"]
   },
   {
-    "itemName": "Some Coffee",
+    "item_name": "Some Coffee",
     "system_name": "coffee",
     "type": "drink",
     "price": 2,
@@ -61,7 +61,7 @@
     "ingredients": ["coffee beans", "water"]
   },
   {
-    "itemName": "Some Sparkling Water",
+    "item_name": "Some Sparkling Water",
     "system_name": "sparkling_water",
     "type": "drink",
     "price": 1,
@@ -69,7 +69,7 @@
     "ingredients": ["carbonated water", "natural flavoring"]
   },
   {
-    "itemName": "A Cookie",
+    "item_name": "A Cookie",
     "system_name": "cookie",
     "type": "desert",
     "price": 2,
@@ -77,7 +77,7 @@
     "ingredients": ["chocolate chips", "wheat", "eggs", "sugar", "margerine"]
   },
   {
-    "itemName": "A Soft Serve Cone",
+    "item_name": "A Soft Serve Cone",
     "system_name": "soft_serve",
     "type": "desert",
     "price": 2,
