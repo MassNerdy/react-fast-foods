@@ -63,6 +63,41 @@ button {
 }
 
 .order {
+  background: lightblue;
+  display: flex;
   margin: 20px 0;
-  background: red;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px double slategray;
+  border-radius: 10px;
+}
+
+.order-item-list {
+  width: 100%;
+}
+
+.order_action_buttons {
+  display: inline-flex;
+  align-self: flex-end;
+  justify-self: flex-end;
+  height: 28px;
+  width: auto;
+  background: lightcyan;
+}
+
+.complete_order_button,
+.cancel_order_button {
+  height: 100%
+}
+
+.complete_order_button {
+  margin-right: 10px;
+  height: 100%;  
+}
+
+.complete_order_label {
+  margin-top: 2px;
+}
+
+.cancel_order_button {    
 }

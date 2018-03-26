@@ -4,6 +4,7 @@ import MenuItem from '../MenuItem'
 
 const renderMenuItems = data.map((item) => 
     <MenuItem
+      key = {item.system_name}
       type = {item.type}
       item_name = {item.item_name}
       system_name = {item.system_name}
@@ -14,7 +15,6 @@ const renderMenuItems = data.map((item) =>
 function Menu() { 
   return (
     <div className="main-menu">
-      <p>Select items to add to a new order</p>
       <ul className="item-list">
         { renderMenuItems }
       </ul>

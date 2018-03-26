@@ -1,6 +1,5 @@
 import React from 'react'
 import OrderItem from '../OrderItem'
-import data from '../../menuItems.json'
 
 const item_list = [
   {item_name:"The Burger", qty:100, price: 5},
@@ -10,6 +9,7 @@ const item_list = [
 
 const renderItemList = item_list.map((item, qty) =>
   <OrderItem  
+    key={item.item_name}
     item_name={item.item_name}
     qty={item.qty}
     price={item.price} />
@@ -17,7 +17,7 @@ const renderItemList = item_list.map((item, qty) =>
 
 function ItemList(item_list){
   return (
-    <ul>
+    <ul className="order-item-list">
       { renderItemList }
     </ul>
   )
