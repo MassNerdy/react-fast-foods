@@ -2,7 +2,7 @@ import React from 'react'
 import FaFlagCheckered from 'react-icons/lib/fa/flag-checkered'
 
 const CompleteOrder = () => {
-  console.log("Complete order and send to the kitchen?")
+  
 }
 
 function CompleteOrderButton() {

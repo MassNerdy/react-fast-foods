@@ -1,8 +1,8 @@
 import React from 'react'
-import data from '../menuItems.json'
 import MenuItem from '../MenuItem'
 
-const renderMenuItems = data.map((item) => 
+const renderMenuItems = (menu_data) =>
+  menu_data.map((item) => 
     <MenuItem
       key = {item.system_name}
       type = {item.type}
@@ -12,11 +12,11 @@ const renderMenuItems = data.map((item) =>
       allergens = {item.allergens} />
   );
 
-function Menu() { 
+function Menu(props) { 
   return (
     <div className="main-menu">
       <ul className="item-list">
-        { renderMenuItems }
+        { renderMenuItems(props.menu_items) }
       </ul>
     </div> 
   )

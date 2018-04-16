@@ -8,7 +8,7 @@ function MenuItem(props) {
         <span className={"itemName " + props.system_name}>{props.item_name}</span>
         <span className="dotted_spacer" />
         <span className="price">${props.price}</span>
-        <MenuItemButtons />
+        <MenuItemButtons menu_item={props} />
       </div>
     </div>
   )

@@ -1,11 +1,11 @@
 import React from 'react'
 import OrderItem from '../OrderItem'
 
-const item_list = [
-  {item_name:"The Burger", qty:100, price: 5},
-  {item_name:"The Hot Dog", qty: 2, price: 5},
-  {item_name:"A Cookie", qty: 3, price: 2}
-]
+  const item_list = [
+    {item_name:"The Burger", qty:100, price: 5},
+    {item_name:"The Hot Dog", qty: 2, price: 5},
+    {item_name:"A Cookie", qty: 3, price: 2}
+  ]
 
 const renderItemList = item_list.map((item, qty) =>
   <OrderItem  
