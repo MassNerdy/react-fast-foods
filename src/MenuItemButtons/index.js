@@ -5,7 +5,7 @@ import RemoveFromOrderButton from './RemoveFromOrderButton'
 function MenuItemButtons(props) {
   return (
     <div className="menu_item_buttons">
-      <AddToOrderButton menu_item={props.menu_item} addToCurrentOrdere={props.addToCurrentOrder} />
+      <AddToOrderButton menu_item={props.menu_item} addItemToOrder={props.addItemToOrder} />
       <RemoveFromOrderButton />
       <p className="quantity">Qty</p>
     </div>

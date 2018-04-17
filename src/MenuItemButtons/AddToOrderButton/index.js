@@ -1,13 +1,12 @@
 import React from 'react'
 import FaPlus from 'react-icons/lib/fa/plus'
 
-
 class AddToOrderButton extends React.Component {
   render() {
     return(
       <button 
         className="add_button"
-        addItemToOrder={ this.props.addItemToOrder }>
+        onClick={() => this.props.addItemToOrder(this.props.menu_item) }>
         <FaPlus />
       </button>
     )
