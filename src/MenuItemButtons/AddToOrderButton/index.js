@@ -6,7 +6,9 @@ class AddToOrderButton extends React.Component {
     return(
       <button 
         className="add_button"
-        onClick={() => this.props.addItemToOrder(this.props.menu_item) }>
+        onClick={
+          () => 
+            this.props.addItemToOrder(this.props.menu_item)}>
         <FaPlus />
       </button>
     )

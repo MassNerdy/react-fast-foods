@@ -8,18 +8,33 @@ export default class DriveThruTerminal extends React.Component {
   constructor(props) {
     super(props)
     this.addItemToOrder = this.addItemToOrder.bind(this)
-
     this.state = {
-      orders: order_data,
       current_order: [],
       menu_items: data,
+      orders: order_data
     }
   }
   
   addItemToOrder(menu_item) {
-    this.setState((prevState) => {
-      {current_order: [...prevState.current_order, menu_item]}
-    })
+    let co, co_filter, contains_menu_item, menu_item_index
+    co = this.state.current_order
+    co_filter = co.filter(item => item.item_name === menu_item.system_name)
+    contains_menu_item = co_filter.length === 1
+    menu_item_index = co.indexOf(co_filter[0])
+
+    if (contains_menu_item) {
+      this.setState((prevState, props) => (
+        co[menu_item_index].quantity, co[menu_item_index].quantity += 1
+      ))
+    } else {
+      this.setState((prevState, sysName) => ({
+        current_order: [...prevState.current_order, { 
+          item_name: menu_item.system_name,
+          item: menu_item, 
+          quantity: 1
+        }],
+      }))
+    }
   } render () {  
     return (
       <div id="drive-thru-terminal">
