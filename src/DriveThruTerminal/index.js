@@ -8,11 +8,16 @@ export default class DriveThruTerminal extends React.Component {
   constructor(props) {
     super(props)
     this.addItemToOrder = this.addItemToOrder.bind(this)
+    this.removeItemFromOrder = this.removeItemFromOrder.bind(this)
     this.state = {
       current_order: [],
       menu_items: data,
       orders: order_data
     }
+  }
+
+  removeItemFromOrder(menu_item) {
+    console.log("Remove Item!")
   }
   
   addItemToOrder(menu_item) {
@@ -41,8 +46,11 @@ export default class DriveThruTerminal extends React.Component {
         <h3>React Fast Foods</h3>
         <div id="order-portal">
           <Order current_order={this.state.current_order} />
-          <Menu menu_items={this.state.menu_items} addItemToOrder={this.addItemToOrder} />
-          {/*<OrdersList orders={this.props.orders} />*/}
+          <Menu 
+            menu_items={this.state.menu_items} 
+            addItemToOrder={this.addItemToOrder}
+            removeItemFromOrder={this.removeItemFromOrder} />
+            {/*<OrdersList orders={this.props.orders} />*/}
         </div>
       </div>
     )
