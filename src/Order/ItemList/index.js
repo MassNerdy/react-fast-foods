@@ -1,20 +1,20 @@
 import React from 'react'
 import OrderItem from '../OrderItem'
 
-const item_list = []
+const renderItemList = (items) =>
+  items.map((oi) =>
+    <OrderItem
+      key={oi.item.system_name}
+      item_name={oi.item.item_name}
+      price={oi.item.price}
+      qty={oi.quantity}
+      subtotal={oi.quantity * oi.item.price} />
+  )
 
-const renderItemList = item_list.map((item, qty) =>
-  <OrderItem  
-    key={item.item_name}
-    item_name={item.item_name}
-    qty={item.qty}
-    price={item.price} />
-)
-
-function ItemList(item_list){
+function ItemList(props){
   return (
     <ul className="order-item-list">
-      { renderItemList }
+      { renderItemList(props.items) }
     </ul>
   )
 }

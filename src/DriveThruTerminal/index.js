@@ -17,7 +17,22 @@ export default class DriveThruTerminal extends React.Component {
   }
 
   removeItemFromOrder(menu_item) {
-    console.log("Remove Item!")
+    let co, co_filter, contains_menu_item, menu_item_index
+    co = this.state.current_order
+    co_filter = co.filter(item => item.item_name === menu_item.system_name)
+    contains_menu_item = co_filter.length === 1
+    menu_item_index = co.indexOf(co_filter[0])
+
+    if (contains_menu_item && co[menu_item_index].quantity >= 2) {
+      this.setState((prevState, props) => (
+        co[menu_item_index].quantity, co[menu_item_index].quantity -= 1
+      ))
+    } else if (contains_menu_item && co[menu_item_index].quantity === 1) {
+      co.splice(co.indexOf(co[menu_item_index]), 1)
+      this.setState((prevState) => ({
+        current_order: co,
+      }))
+    }
   }
   
   addItemToOrder(menu_item) {
@@ -32,7 +47,7 @@ export default class DriveThruTerminal extends React.Component {
         co[menu_item_index].quantity, co[menu_item_index].quantity += 1
       ))
     } else {
-      this.setState((prevState, sysName) => ({
+      this.setState((prevState) => ({
         current_order: [...prevState.current_order, { 
           item_name: menu_item.system_name,
           item: menu_item, 
@@ -45,7 +60,8 @@ export default class DriveThruTerminal extends React.Component {
       <div id="drive-thru-terminal">
         <h3>React Fast Foods</h3>
         <div id="order-portal">
-          <Order current_order={this.state.current_order} />
+          <Order 
+            current_order={this.state.current_order} />
           <Menu 
             menu_items={this.state.menu_items} 
             addItemToOrder={this.addItemToOrder}

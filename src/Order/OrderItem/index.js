@@ -4,12 +4,14 @@ const OrderItem = ({
   item_name,
   qty,
   price,
+  subtotal,
 }) => (
-  <li className="order-item">
-    <span className="item-name">{item_name}</span>
-    <span className="item-qty">{qty}</span>
-    <span className="item-sub-total">{"$" + (price * qty)}</span>
-  </li>
+  <div className="order_item">
+    <span className="item_name">{item_name}</span>
+    <span className="dotted_spacer" />
+    <span className="item_qty">Qty {qty}</span>
+    <span className="item_sub_total">${subtotal}</span>
+  </div>
 );
 
 export default OrderItem

@@ -21,10 +21,11 @@ h3 {
   border-bottom: 1px lightgray solid;
 }
 
-.item_heading_container {
+.item_heading_container,
+.order_item {
   font-size: 18px;
   display: flex;
-  flex: 2 auto 1 1;
+  flex: 2 auto auto 1;
   flex-direction: row;
   align-items: center;
 }
@@ -33,7 +34,8 @@ h3 {
   margin-right: 10px;
 }
 
-.price {
+.price,
+.item_sub_total {
   margin-left: 10px;
   margin-right: 20px;
 }
@@ -99,5 +101,22 @@ button {
   margin-top: 2px;
 }
 
-.cancel_order_button {    
+.order_total_container {
+  margin: 20px 0;
+}
+
+.order_total {
+  display: inline-block;
+  float: right;
+  width: auto;
+}
+
+.item_qty {
+  width: 75px;
+  margin-left: 20px;
+}
+
+.item_sub_total {
+  width: 50px;
+  text-align: right;
 }
