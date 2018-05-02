@@ -5,7 +5,7 @@ import CompleteOrderButton from './CompleteOrderButton'
 function OrderActionButtons(props) {
   return (
     <div className="order_action_buttons">
-      <CompleteOrderButton />
+      <CompleteOrderButton completeOrder={props.completeOrder} />
       <CancelOrderButton />
     </div>
   )

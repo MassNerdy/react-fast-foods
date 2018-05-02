@@ -22,7 +22,7 @@ function Order(props) {
     <div className="order">
       <ItemList items={props.current_order}/>
       {currentOrderTotal(props.current_order)}
-      <OrderActionButtons />
+      <OrderActionButtons completeOrder={props.completeOrder}/>
     </div>
   )
 } 
