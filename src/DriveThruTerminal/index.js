@@ -7,6 +7,8 @@ import data from '../menuItems.json'
 export default class DriveThruTerminal extends React.Component {
   constructor(props) {
     super(props)
+    this.renderOrdersList = this.renderOrdersList.bind(this)
+    this.uniqueOrderId = this.uniqueOrderId.bind(this)
     this.addItemToOrder = this.addItemToOrder.bind(this)
     this.removeItemFromOrder = this.removeItemFromOrder.bind(this)
     this.completeOrder = this.completeOrder.bind(this)
@@ -14,7 +16,8 @@ export default class DriveThruTerminal extends React.Component {
     this.state = {
       current_order: [],
       menu_items: data,
-      orders: []
+      orders: [],
+      next_order_id: 1
     }
   }
 
@@ -32,6 +35,16 @@ export default class DriveThruTerminal extends React.Component {
   //   console.log(options)
   // }
 
+  renderOrdersList(orders) {
+    if (orders.length > 0) {
+      return (
+        <OrdersList orders={this.state.orders} />
+      )
+    } else {
+      return
+    }
+  }
+
   addItemToOrder(menu_item) {
     let co, co_filter, contains_menu_item, menu_item_index
     co = this.state.current_order
@@ -47,8 +60,8 @@ export default class DriveThruTerminal extends React.Component {
       this.setState((prevState) => ({
         current_order: [...prevState.current_order, { 
           item_name: menu_item.system_name,
-          item: menu_item, 
-          quantity: 1
+          item: menu_item,
+          quantity: 1,
         }],
       }))
     }
@@ -73,14 +86,29 @@ export default class DriveThruTerminal extends React.Component {
     }
   }
 
+  uniqueOrderId() {
+    return Math.random().toString(36).substr(2, 16);
+  }
+
   completeOrder(){
     if (this.state.current_order.length != 0) {
       this.setState((prevState, props) => ({
-        orders: [...prevState.orders, prevState.current_order],
-        current_order: []
+        orders: [
+          ...prevState.orders,
+          {
+            order_id: prevState.next_order_id,
+            order_items: prevState.current_order,
+            created_at: (new Date).toLocaleTimeString(),
+            order_total: prevState.current_order.order_total
+          }
+        ],
+        current_order: [],
+        next_order_id: prevState.next_order_id + 1
       }))
     }
-  } render () {  
+  } 
+  
+  render () {  
     return (
       <div id="drive-thru-terminal">
         <h3>React Fast Foods</h3>
@@ -92,7 +120,7 @@ export default class DriveThruTerminal extends React.Component {
             menu_items={this.state.menu_items} 
             addItemToOrder={this.addItemToOrder}
             removeItemFromOrder={this.removeItemFromOrder} />
-            <OrdersList orders={this.state.orders} />
+          { this.renderOrdersList(this.state.orders) }
         </div>
       </div>
     )

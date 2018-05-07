@@ -64,6 +64,14 @@ button {
   display: none;
 }
 
+.orders_list {
+  height: auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+}
+
 .order {
   background: lightblue;
   display: flex;
@@ -74,10 +82,6 @@ button {
   border-radius: 10px;
 }
 
-.order-item-list {
-  width: 100%;
-}
-
 .order_action_buttons {
   display: inline-flex;
   align-self: flex-end;
@@ -85,6 +89,16 @@ button {
   height: 28px;
   width: auto;
   background: lightcyan;
+}
+
+.order-summary-card {
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  padding: 5px;
+}
+
+.order-summary-card p {
+  margin-bottom: 0;
 }
 
 .complete_order_button,
