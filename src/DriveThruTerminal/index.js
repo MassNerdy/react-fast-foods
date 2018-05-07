@@ -12,7 +12,8 @@ export default class DriveThruTerminal extends React.Component {
     this.addItemToOrder = this.addItemToOrder.bind(this)
     this.removeItemFromOrder = this.removeItemFromOrder.bind(this)
     this.completeOrder = this.completeOrder.bind(this)
-    // this.setupMenuClickOptions = this.setupMenuClickOptions.bind(this)
+    this.cancelOrder = this.cancelOrder.bind(this)
+
     this.state = {
       current_order: [],
       menu_items: data,
@@ -20,20 +21,6 @@ export default class DriveThruTerminal extends React.Component {
       next_order_id: 1
     }
   }
-
-  // Set up method to organize and pass in relavant data
-  // Either call method in another function, or pass in an identifier
-  // and have a single method to the work
-
-  // setupMenuClickOptions(menu_item) {
-  //   let options = {}
-  //   let co, co_filter, contains_menu_item, menu_item_index
-  //   options.co = this.state.current_order
-  //   options.co_filter = co.filter(item => item.item_name === menu_item.system_name)
-  //   options.contains_menu_item = co_filter.length === 1
-  //   options.menu_item_index = co.indexOf(co_filter[0])
-  //   console.log(options)
-  // }
 
   renderOrdersList(orders) {
     if (orders.length > 0) {
@@ -91,7 +78,7 @@ export default class DriveThruTerminal extends React.Component {
   }
 
   completeOrder(){
-    if (this.state.current_order.length != 0) {
+    if (this.state.current_order.length > 0) {
       this.setState((prevState, props) => ({
         orders: [
           ...prevState.orders,
@@ -106,7 +93,17 @@ export default class DriveThruTerminal extends React.Component {
         next_order_id: prevState.next_order_id + 1
       }))
     }
-  } 
+  }
+
+  cancelOrder() {
+    if (this.state.current_order.length > 0) {
+      if (window.confirm("Are you sure you want to cancel this order? You cannot get this information back if you confirm.")) {
+        this.setState((prevState) => ({
+          current_order: []
+        }))
+      }
+    }
+  }
   
   render () {  
     return (
@@ -115,6 +112,7 @@ export default class DriveThruTerminal extends React.Component {
         <div id="order-portal">
           <Order 
             completeOrder={this.completeOrder}
+            cancelOrder={this.cancelOrder}
             current_order={this.state.current_order} />
           <Menu 
             menu_items={this.state.menu_items} 

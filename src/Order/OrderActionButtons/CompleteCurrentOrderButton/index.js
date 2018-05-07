@@ -1,14 +1,14 @@
 import React from 'react'
 import FaFlagCheckered from 'react-icons/lib/fa/flag-checkered'
 
-class CompleteOrderButton extends React.Component {
+class CompleteCurrentOrderButton extends React.Component {
   render() {
     return(
       <button 
         className="complete_order_button"
         onClick={
           () => 
-            this.props.completeOrder()}>
+            this.props.completeOrder()} >
         <span className="complete_order_label">Send Order to Kitchen</span>
         <FaFlagCheckered />
       </button>
@@ -16,4 +16,4 @@ class CompleteOrderButton extends React.Component {
   }
 }
 
-export default CompleteOrderButton
+export default CompleteCurrentOrderButton
