@@ -1,5 +1,9 @@
 /* Overall Styles */
 
+h1, h2, h3, p, div, span {
+  font-family: "Helvetica-bold", sans-serif;
+}
+
 div#drive-thru-terminal {
   display: block;
   padding: 25px;
@@ -8,16 +12,16 @@ div#drive-thru-terminal {
 }
 
 h3 {
-  background: greenyellow;
+  font-size: 28px;
   padding: 10px;
 }
 
 /* Menu Styles */
 
 .menu_item {
-  margin-top: 15px;
+  margin-top: 5px;
   min-width: 400px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   border-bottom: 1px lightgray solid;
 }
 
@@ -28,6 +32,10 @@ h3 {
   flex: 2 auto auto 1;
   flex-direction: row;
   align-items: center;
+}
+
+.item-list {
+  padding-left: 0;
 }
 
 .item_name {
@@ -41,20 +49,27 @@ h3 {
 }
 
 button {
-  display:block;
   margin-bottom: 0;
   line-height: 0;
-  height: 2rem;
+  height: 1.2rem;
   padding-left: 10px;
   padding-right: 10px;
 }
 
+button:focus {
+  outline: none;
+}
+
 .add_button {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+}
+
+button svg {
+  height: 10px;
+  width: 10px;
 }
 
 .dotted_spacer {
-  border-bottom: 1px dashed grey;
   height: 10px;
   flex-grow: 4;
   margin-left: 10px;
@@ -73,7 +88,6 @@ button {
 }
 
 .order {
-  background: lightblue;
   display: flex;
   margin: 20px 0;
   flex-direction: column;
@@ -88,7 +102,6 @@ button {
   justify-self: flex-end;
   height: 28px;
   width: auto;
-  background: lightcyan;
 }
 
 .order-summary-card {
@@ -120,7 +133,6 @@ button {
 }
 
 .order_total {
-  display: inline-block;
   float: right;
   width: auto;
 }
