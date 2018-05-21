@@ -89,11 +89,16 @@ button svg {
 
 .order {
   display: flex;
-  margin: 20px 0;
+  margin: 20px 0 40px;
   flex-direction: column;
   padding: 10px;
   border: 1px double slategray;
   border-radius: 10px;
+}
+
+.order-item-list {
+  -webkit-padding-start: 0;
+  padding-left: 10px;
 }
 
 .order_action_buttons {
@@ -116,12 +121,12 @@ button svg {
 
 .complete_order_button,
 .cancel_order_button {
-  height: 100%
+  box-sizing: border-box;
+  height: 28px;
 }
 
 .complete_order_button {
   margin-right: 10px;
-  height: 100%;  
 }
 
 .complete_order_label {
@@ -130,6 +135,10 @@ button svg {
 
 .order_total_container {
   margin: 20px 0;
+}
+
+.orders_list {
+  margin-top: 40px;
 }
 
 .order_total {
@@ -145,4 +154,23 @@ button svg {
 .item_sub_total {
   width: 50px;
   text-align: right;
+}
+
+.complete_order_button svg {
+  height: 15px;
+  margin-left: 10px;
+  margin-top: -1px;
+  width: 15px;
+}
+
+.complete_order_label {
+  line-height: 23px;
+}
+
+.order-summary-card {
+  text-align: center;
+}
+
+.order-summary-card p {
+  margin: 5px;
 }
