@@ -11,19 +11,21 @@ const orderTotal = (order_items) => {
   return total;
 }
 
-const renderOrderCards = (orders) =>
+const renderOrderCards = (orders, props) =>
   orders.map((order) =>
     <OrderSummaryCard
       id={order.order_id}
       item_count={order.order_items.length}
       order_total={ orderTotal(order.order_items) }
-      created_at={order.created_at} />
+      created_at={order.created_at}
+      archiveOrder={props.archiveOrder}
+      cancelOrder={props.cancelOrder} />
   )
 
 function OrdersList(props) {
   return (
     <div className="orders_list">
-      { renderOrderCards(props.orders) }
+      { renderOrderCards(props.orders, props) }
     </div>
   ) 
 }

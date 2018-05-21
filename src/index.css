@@ -14,14 +14,15 @@ div#drive-thru-terminal {
 h3 {
   font-size: 28px;
   padding: 10px;
+  text-align: center;
 }
 
 /* Menu Styles */
 
 .menu_item {
-  margin-top: 5px;
+  margin-top: 10px;
   min-width: 400px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   border-bottom: 1px lightgray solid;
 }
 

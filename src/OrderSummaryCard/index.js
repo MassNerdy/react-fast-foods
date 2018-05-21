@@ -1,5 +1,6 @@
 import React from 'react'
 import Timer from '../Timer'
+import OrderSummaryActionsButtons from "./OrderSummaryActionsButtons"
 
 function OrderSummaryCard(props) {
   return (
@@ -8,6 +9,10 @@ function OrderSummaryCard(props) {
       <p className="created_at">{props.created_at}</p>
       <p className="order_summary_total">Total: ${props.order_total}</p>
       <Timer />
+      <OrderSummaryActionsButtons 
+        archiveOrder={props.archiveOrder}
+        cancelOrder={props.cancelOrder}
+        id={props.id} />
     </div>
   )
 } 

@@ -24,7 +24,7 @@ function Order(props) {
       {currentOrderTotal(props.current_order)}
       <OrderActionButtons 
         completeOrder={props.completeOrder}
-        cancelOrder={props.cancelOrder} />
+        cancelOrder={props.cancelCurrentOrder} />
     </div>
   )
 } 

@@ -12,24 +12,35 @@ export default class DriveThruTerminal extends React.Component {
     this.addItemToOrder = this.addItemToOrder.bind(this)
     this.removeItemFromOrder = this.removeItemFromOrder.bind(this)
     this.completeOrder = this.completeOrder.bind(this)
+    this.cancelCurrentOrder = this.cancelCurrentOrder.bind(this)
+    this.archiveOrder = this.archiveOrder.bind(this)
     this.cancelOrder = this.cancelOrder.bind(this)
 
     this.state = {
       current_order: [],
       menu_items: data,
       orders: [],
+      archived_orders: [],
       next_order_id: 1
     }
   }
 
-  renderOrdersList(orders) {
-    if (orders.length > 0) {
-      return (
-        <OrdersList orders={this.state.orders} />
-      )
-    } else {
-      return
+  renderOrdersList(orders, archiveOrder, cancelOrder) {
+    if (orders.length == 0) {
+      return 
+    } else if (orders.length >= 4) {
+      let managerNotified = false
+      window.confirm("There are more than 4 Open Orders. Notify the Manager!") {
+        managerNotified = true
+      }
     }
+    return (
+      <OrdersList 
+        managerNotified={managerNotified}
+        orders={orders}
+        archiveOrder={archiveOrder}
+        cancelOrder={cancelOrder} />
+    )
   }
 
   addItemToOrder(menu_item) {
@@ -86,7 +97,8 @@ export default class DriveThruTerminal extends React.Component {
             order_id: prevState.next_order_id,
             order_items: prevState.current_order,
             created_at: (new Date).toLocaleTimeString(),
-            order_total: prevState.current_order.order_total
+            order_total: prevState.current_order.order_total,
+            order_status: "open"
           }
         ],
         current_order: [],
@@ -95,13 +107,41 @@ export default class DriveThruTerminal extends React.Component {
     }
   }
 
-  cancelOrder() {
+  cancelCurrentOrder() {
     if (this.state.current_order.length > 0) {
       if (window.confirm("Are you sure you want to cancel this order? You cannot get this information back if you confirm.")) {
         this.setState((prevState) => ({
           current_order: []
         }))
       }
+    }
+  }
+
+  archiveOrder(id) {
+    let oo, order_filter, contains_order, order_index, archivable_order
+    oo = this.state.orders
+    order_filter = oo.filter(order => order.order_id === id)
+    contains_order = order_filter.length === 1
+    order_index = oo.indexOf(order_filter[0])
+    archivable_order = oo[order_index]
+    oo.splice(oo[order_index], 1)
+    this.setState((prevState, orders) => ({
+      archived_orders: [...prevState.archived_orders, archivable_order],
+      orders: oo
+    }))
+  }
+
+  cancelOrder(id) {
+    let oo, order_filter, contains_order, order_index, archivable_order
+    oo = this.state.orders
+    order_filter = oo.filter(order => order.order_id === id)
+    contains_order = order_filter.length === 1
+    order_index = oo.indexOf(order_filter[0])
+    oo.splice(oo[order_index], 1)
+    if (window.confirm("Are you sure you want to delete this order? You cannot get this order back if you confirm.")) {
+      this.setState((prevState, orders) => ({
+        orders: oo
+      }))
     }
   }
   
@@ -112,13 +152,16 @@ export default class DriveThruTerminal extends React.Component {
         <div id="order-portal">
           <Order 
             completeOrder={this.completeOrder}
-            cancelOrder={this.cancelOrder}
+            cancelCurrentOrder={this.cancelCurrentOrder}
             current_order={this.state.current_order} />
           <Menu 
             menu_items={this.state.menu_items} 
             addItemToOrder={this.addItemToOrder}
             removeItemFromOrder={this.removeItemFromOrder} />
-          { this.renderOrdersList(this.state.orders) }
+          { this.renderOrdersList(
+              this.state.orders, 
+              this.archiveOrder, 
+              this.cancelOrder) }
         </div>
       </div>
     )
