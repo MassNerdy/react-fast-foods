@@ -35,6 +35,10 @@ export default class DriveThruTerminal extends React.Component {
           managerNotified: true
         }))
       }
+    } else if (orders.length < 4 && this.state.managerNotified === true) {
+      this.setState((prevState) => ({
+        managerNotified: false
+      }))
     }
     return (
       <OrdersList
