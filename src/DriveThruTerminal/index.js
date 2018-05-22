@@ -21,22 +21,24 @@ export default class DriveThruTerminal extends React.Component {
       menu_items: data,
       orders: [],
       archived_orders: [],
-      next_order_id: 1
+      next_order_id: 1,
+      managerNotified: undefined
     }
   }
 
-  renderOrdersList(orders, archiveOrder, cancelOrder) {
+  renderOrdersList(orders, archiveOrder, cancelOrder, managerNotified) {
     if (orders.length == 0) {
-      return 
-    } else if (orders.length >= 4) {
-      let managerNotified = false
-      window.confirm("There are more than 4 Open Orders. Notify the Manager!") {
-        managerNotified = true
+      return
+    } else if (orders.length >= 4 && this.state.managerNotified != true) {
+      if (window.confirm("The orders are stacking up! Contact the Manger on Duty!")) {
+        this.setState((prevState) => ({
+          managerNotified: true
+        }))
       }
     }
     return (
-      <OrdersList 
-        managerNotified={managerNotified}
+      <OrdersList
+        managerNotified = {managerNotified}
         orders={orders}
         archiveOrder={archiveOrder}
         cancelOrder={cancelOrder} />
@@ -124,7 +126,8 @@ export default class DriveThruTerminal extends React.Component {
     contains_order = order_filter.length === 1
     order_index = oo.indexOf(order_filter[0])
     archivable_order = oo[order_index]
-    oo.splice(oo[order_index], 1)
+    oo.splice(order_index, 1)
+    debugger
     this.setState((prevState, orders) => ({
       archived_orders: [...prevState.archived_orders, archivable_order],
       orders: oo
@@ -137,7 +140,7 @@ export default class DriveThruTerminal extends React.Component {
     order_filter = oo.filter(order => order.order_id === id)
     contains_order = order_filter.length === 1
     order_index = oo.indexOf(order_filter[0])
-    oo.splice(oo[order_index], 1)
+    oo.splice(order_index, 1)
     if (window.confirm("Are you sure you want to delete this order? You cannot get this order back if you confirm.")) {
       this.setState((prevState, orders) => ({
         orders: oo
@@ -161,7 +164,8 @@ export default class DriveThruTerminal extends React.Component {
           { this.renderOrdersList(
               this.state.orders, 
               this.archiveOrder, 
-              this.cancelOrder) }
+              this.cancelOrder,
+              this.state.managerNotified) }
         </div>
       </div>
     )

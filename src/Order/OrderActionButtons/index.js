@@ -4,7 +4,7 @@ import CompleteCurrentOrderButton from './CompleteCurrentOrderButton'
 
 function OrderSummaryActionButtons(props) {
   return (
-    <div className="order_summary_action_buttons">
+    <div className="order_action_buttons">
       <CompleteCurrentOrderButton completeOrder={props.completeOrder} />
       <CancelCurrentOrderButton cancelOrder={props.cancelOrder} />
     </div>

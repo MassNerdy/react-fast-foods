@@ -24,7 +24,7 @@ const renderOrderCards = (orders, props) =>
 
 function OrdersList(props) {
   return (
-    <div className="orders_list">
+    <div className={"orders_list" + (props.managerNotified == true ? " high_order_volume" : "")}>
       { renderOrderCards(props.orders, props) }
     </div>
   ) 

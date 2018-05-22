@@ -102,6 +102,10 @@ button svg {
   padding-left: 10px;
 }
 
+.orders_list.high_order_volume .order-summary-card {
+  background-color: hsla(35, 100%, 43%, 0.61);
+}
+
 .order_action_buttons {
   display: inline-flex;
   align-self: flex-end;
@@ -121,12 +125,14 @@ button svg {
 }
 
 .complete_order_button,
-.cancel_order_button {
+.cancel_order_button,
+.archive_order_button {
   box-sizing: border-box;
   height: 28px;
 }
 
-.complete_order_button {
+.complete_order_button,
+.archive_order_button {
   margin-right: 10px;
 }
 
