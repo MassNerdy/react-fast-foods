@@ -157,14 +157,14 @@ export default class DriveThruTerminal extends React.Component {
       <div id="drive-thru-terminal">
         <h3>React Fast Foods</h3>
         <div id="order-portal">
-          <Order 
-            completeOrder={this.completeOrder}
-            cancelCurrentOrder={this.cancelCurrentOrder}
-            current_order={this.state.current_order} />
           <Menu 
             menu_items={this.state.menu_items} 
             addItemToOrder={this.addItemToOrder}
             removeItemFromOrder={this.removeItemFromOrder} />
+          <Order 
+            completeOrder={this.completeOrder}
+            cancelCurrentOrder={this.cancelCurrentOrder}
+            current_order={this.state.current_order} />
           { this.renderOrdersList(
               this.state.orders, 
               this.archiveOrder, 

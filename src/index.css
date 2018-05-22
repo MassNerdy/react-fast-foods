@@ -21,9 +21,14 @@ h3 {
 
 .menu_item {
   margin-top: 10px;
-  min-width: 400px;
+  min-width: 300px;
   padding-bottom: 10px;
   border-bottom: 1px lightgray solid;
+}
+
+.menu_item:first-child {
+  border-top: 1px lightgray solid;
+  padding-top: 12px;
 }
 
 .item_heading_container,
@@ -137,7 +142,7 @@ button svg {
 }
 
 .complete_order_label {
-  margin-top: 2px;
+  line-height: 28px;
 }
 
 .order_total_container {
@@ -163,15 +168,16 @@ button svg {
   text-align: right;
 }
 
-.complete_order_button svg {
+.order_action_buttons svg,
+.order_summary_actions_buttons svg {
   height: 15px;
-  margin-left: 10px;
-  margin-top: -1px;
   width: 15px;
 }
 
+.archive_order_label,
 .complete_order_label {
   line-height: 23px;
+  margin-right: 5px;
 }
 
 .order-summary-card {
@@ -179,5 +185,16 @@ button svg {
 }
 
 .order-summary-card p {
-  margin: 5px;
+  margin: 10px;
+}
+
+.order_summary_actions_buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.archive_order_button svg,
+.complete_order_button svg {
+  margin-top: -2px
 }

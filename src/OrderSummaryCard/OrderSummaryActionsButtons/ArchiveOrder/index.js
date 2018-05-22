@@ -9,7 +9,7 @@ class ArchiveOrderButton extends React.Component {
         onClick={
           () => 
             this.props.archiveOrder(this.props.order_id)} >
-        <span className="complete_order_label">Archive</span>
+        <span className="archive_order_label">Archive</span>
         <FaArchive />
       </button>
     )
