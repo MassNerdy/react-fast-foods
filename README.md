@@ -1,5 +1,7 @@
 # React Fast Foods
 
+![home-page-image](./rff.png)
+
 This is a simple react app that was built with the following criteria in mind:
 
 #### The requirements for the project: 
